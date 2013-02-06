@@ -1,0 +1,7 @@
+from: service@example.com
+to: user.email
+subject: "Welcome to Ornamental, user.name"
+layout: wide
+template: user_welcome
+required:
+    - user

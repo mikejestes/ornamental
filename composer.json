@@ -1,0 +1,32 @@
+{
+    "name":         "mikejestes/ornamental",
+    "description":  "A library to send templated transactional emails, and easily test.",
+    "keywords":     ["email", "template"],
+    "homepage":     "https://github.com/mikejestes/ornamental",
+    "type":         "library",
+    "license":      "MIT",
+    "authors":      [
+        {
+            "name":      "Mike Estes",
+            "email":     "mikejestes@gmail.com",
+            "homepage":  "http://mikejestes.com"
+        }
+    ],
+
+    "require": {
+        "php":                 ">=5.3.0",
+        "phpmailer/phpmailer": "@dev",
+        "symfony/yaml":        "@stable"
+    },
+
+    "require-dev": {
+        "mustache/mustache":   "@stable"
+    },
+
+
+    "autoload": {
+        "psr-0": {
+            "Ornamental": "."
+        }
+    }
+}

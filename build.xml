@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="scheezy" default="test">
+
+    <target name="test" description="Run unit tests" >
+        <exec executable="phpunit">
+            <arg value="--bootstrap=tests/bootstrap.php"/>
+            <arg value="tests"/>
+        </exec>
+    </target>
+
+    <target name="coverage">
+        <exec executable="phpunit">
+            <arg value="--coverage-html=${basedir}/coverage"/>
+            <arg value="--bootstrap=tests/bootstrap.php"/>
+            <arg value="tests"/>
+        </exec>
+    </target>
+
+    <target name="view-coverage">
+        <exec executable="open ${basedir}/coverage/index.html" />
+    </target>
+
+    <target name="metrics" depends="phpmd,phpcs,phpcpd"/>
+
+    <target name="phpmd">
+        <exec executable="phpmd">
+            <arg path="${basedir}/Ornamental" />
+            <arg value="text" />
+            <arg value="codesize,unusedcode,design,naming,controversial" />
+        </exec>
+    </target>
+
+    <target name="phpcs">
+        <exec executable="phpcs">
+            <arg value="--standard=PSR2" />
+            <arg path="Ornamental" />
+            <arg path="tests" />
+        </exec>
+    </target>
+
+    <target name="phpcpd" description="Find duplicate code using PHPCPD">
+        <exec executable="phpcpd">
+            <arg path="${basedir}/Ornamental" />
+        </exec>
+    </target>
+
+</project>
