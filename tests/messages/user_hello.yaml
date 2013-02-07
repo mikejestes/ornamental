@@ -1,7 +1,7 @@
 from: service@example.com
 to: user.email
 subject: "Welcome to Ornamental, user.name"
-layout: wide
+layout: hello
 template: user_welcome
 required:
     - user

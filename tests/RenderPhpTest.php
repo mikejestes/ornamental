@@ -30,7 +30,6 @@ Welcome to our service. We really thank you for signing up.<br><br>
 
 --<br>
 The Team
-
 </td>
 </tr>
 </table>

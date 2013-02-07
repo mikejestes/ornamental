@@ -40,6 +40,12 @@ class Message
                 throw new \Exception("$requiredKey is required to be set on message $this->name");
             }
         }
+
+        $deliveries = Deliveries::getInstance();
+        $deliveries->add($this);
+
+        $sender = $this->settings->sender;
+        $sender->send($this);
     }
 
     public function getTemplateData()
@@ -68,10 +74,12 @@ class Message
 
         $yaml = Yaml::parse($file);
 
-        $this->to = $yaml['to'];
-        $this->from = $yaml['from'];
-        $this->subject = $yaml['subject'];
-        $this->required = $yaml['required'];
-        $this->layout = $yaml['layout'];
+        foreach ($yaml as $key => $value) {
+            $this->$key = $value;
+        }
+
+        if (!$this->layout) {
+            $this->layout = $this->name;
+        }
     }
 }

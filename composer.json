@@ -15,11 +15,11 @@
 
     "require": {
         "php":                 ">=5.3.0",
-        "phpmailer/phpmailer": "@dev",
         "symfony/yaml":        "@stable"
     },
 
     "require-dev": {
+        "phpmailer/phpmailer": "@dev",
         "mustache/mustache":   "@stable"
     },
 
