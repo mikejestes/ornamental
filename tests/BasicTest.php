@@ -9,7 +9,7 @@ class BasicTest extends OrnamentalTestSuite
     {
         $message = new \Ornamental\Message('user_welcome');
         $this->assertEquals('service@example.com', $message->from);
-        $this->assertEquals('Welcome to Ornamental, user.name', $message->subject);
+        $this->assertEquals('Welcome to Ornamental, {{user.name}}', $message->subject);
     }
 
     /**

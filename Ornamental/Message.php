@@ -44,6 +44,8 @@ class Message
         $deliveries = Deliveries::getInstance();
         $deliveries->add($this);
 
+        $this->prepareMeta();
+
         $sender = $this->settings->sender;
         $sender->send($this);
     }
@@ -63,6 +65,18 @@ class Message
     {
         $renderer = new Renderer($this->settings);
         return $renderer->renderText($this);
+    }
+
+    private function prepareMeta()
+    {
+        $templateData = $this->getTemplateData();
+        $this->to = $this->replaceVar($this->to, $templateData);
+        $this->subject = $this->replaceVar($this->subject, $templateData);
+    }
+
+    private function replaceVar($str, $data)
+    {
+        return $this->settings->metaRenderer->renderString($str, $data);
     }
 
     private function loadMessageDefinition($name)

@@ -1,7 +1,8 @@
 from: service@example.com
-to: user.email
-subject: "Welcome to Ornamental, user.name"
+to: "{{email}}"
+subject: "Welcome to Ornamental, {{username}}"
 layout: hello
 template: user_welcome
 required:
-    - user
+    - email
+    - username

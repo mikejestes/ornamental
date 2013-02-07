@@ -23,7 +23,6 @@
         "mustache/mustache":   "@stable"
     },
 
-
     "autoload": {
         "psr-0": {
             "Ornamental": "."

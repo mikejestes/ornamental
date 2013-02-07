@@ -13,6 +13,11 @@ class Php
         $this->settings = $settings;
     }
 
+    public function renderString($string, $templateData)
+    {
+        throw Exception("Php renderer is not support for metaRendering.");
+    }
+
     public function render($file, $templateData)
     {
         extract($templateData);

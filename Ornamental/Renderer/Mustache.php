@@ -13,9 +13,14 @@ class Mustache
         $this->settings = $settings;
     }
 
-    public function render($file, $templateData)
+    public function renderString($string, $templateData)
     {
         $mustacheEngine = new \Mustache_Engine();
-        return $mustacheEngine->render(file_get_contents($file), $templateData);
+        return $mustacheEngine->render($string, $templateData);
+    }
+
+    public function render($file, $templateData)
+    {
+        return $this->renderString(file_get_contents($file), $templateData);
     }
 }
