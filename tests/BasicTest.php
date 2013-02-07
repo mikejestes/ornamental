@@ -21,6 +21,15 @@ class BasicTest extends OrnamentalTestSuite
         $message->send();
     }
 
+    public function testUnknownMessageThrowsException()
+    {
+        $setup = \Ornamental\Settings::getInstance();
+        $this->setExpectedException('Exception', "non_existant message not found in " . $setup->messageDir);
+
+        $message = new \Ornamental\Message('non_existant');
+        $message->send();
+    }
+
     public function testNullSend()
     {
         $message = new \Ornamental\Message('user_welcome');

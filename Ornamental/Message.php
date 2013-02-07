@@ -69,7 +69,7 @@ class Message
     {
         $file = $this->settings->messageDir . '/' . $name . '.yaml';
         if (!is_file($file)) {
-            throw new \Exception("$name message not found in {$this->settings->message_dir}");
+            throw new \Exception("$name message not found in {$this->settings->messageDir}");
         }
 
         $yaml = Yaml::parse($file);
