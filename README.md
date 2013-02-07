@@ -8,9 +8,9 @@ A library to send templated transactional emails. Plugins for your choice of tem
 Add to your `composer.json` file:
 
 ```yaml
-        "require": {
-            "mikejestes/ornamental": "*"
-        },
+"require": {
+    "mikejestes/ornamental": "*"
+}
 ```
 
 Then download and run [composer](http://getcomposer.org/):
@@ -25,6 +25,7 @@ $setup = \Ornamental\Settings::getInstance();
 $setup->templateDir = __DIR__ . '/templates/';
 $setup->layoutDir = __DIR__ . '/layouts/';
 $setup->messageDir = __DIR__ . '/messages/';
+
 $setup->sender = new \Ornamental\Sender\Phpmailer();
 $setup->sender->smtpHost = 'smtp.example.com';
 $setup->sender->smtpUsername = 'root';
@@ -51,5 +52,5 @@ Mail Transport:
 Unit tests can inspect the send log:
 ```php
 $deliveries = \Ornamental\Deliveries::getInstance();
-$this->assertEquals(2, count($deliveries->log))
+$this->assertEquals(2, count($deliveries->log));
 ```
