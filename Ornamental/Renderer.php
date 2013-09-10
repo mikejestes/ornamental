@@ -53,7 +53,7 @@ class Renderer
 
     private function renderFile($file, $templateData)
     {
-        $dot = strpos($file, '.');
+        $dot = strrpos($file, '.');
         $extension = ucfirst(substr($file, $dot + 1));
 
         $class = "\Ornamental\Renderer\\$extension";
