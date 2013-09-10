@@ -46,8 +46,9 @@ class Message
 
         $this->prepareMeta();
 
-        $sender = $this->settings->sender;
-        $sender->send($this);
+        foreach ($this->settings->senders as $sender) {
+            $sender->send($this);
+        }
     }
 
     public function getTemplateData()

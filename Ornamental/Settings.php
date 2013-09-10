@@ -7,7 +7,7 @@ class Settings
     public $templateDir;
     public $messageDir;
     public $layoutDir;
-    public $sender;
+    public $senders = array();
     public $metaRenderer;
 
     private static $instance;
@@ -16,10 +16,15 @@ class Settings
     {
         if (!self::$instance) {
             self::$instance = new Settings();
-            self::$instance->sender = new Sender\Null(self::$instance);
+            self::$instance->addSender(new Sender\Null(self::$instance));
             self::$instance->metaRenderer = new Renderer\Mustache(self::$instance);
         }
 
         return self::$instance;
+    }
+
+    public function addSender(\Ornamental\Sender $sender)
+    {
+        $this->senders[] = $sender;
     }
 }

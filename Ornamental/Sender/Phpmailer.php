@@ -2,7 +2,7 @@
 
 namespace Ornamental\Sender;
 
-class Phpmailer
+class Phpmailer implements \Ornamental\Sender
 {
     public $smtpHost;
     public $smtpUsername;

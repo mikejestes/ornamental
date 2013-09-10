@@ -2,7 +2,7 @@
 
 namespace Ornamental\Sender;
 
-class Null
+class Null implements \Ornamental\Sender
 {
     public function send($message)
     {
