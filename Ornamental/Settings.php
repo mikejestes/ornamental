@@ -8,6 +8,7 @@ class Settings
     public $messageDir;
     public $layoutDir;
     public $senders = array();
+    public $defaults = array();
     public $metaRenderer;
 
     private static $instance;

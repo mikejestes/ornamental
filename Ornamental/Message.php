@@ -53,7 +53,7 @@ class Message
 
     public function getTemplateData()
     {
-        return $this->templateData;
+        return array_merge($this->settings->defaults, $this->templateData);
     }
 
     public function renderHtml()

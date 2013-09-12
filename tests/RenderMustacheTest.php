@@ -4,6 +4,16 @@ namespace Ornamental\Tests;
 
 class RenderMustacheTest extends OrnamentalTestSuite
 {
+    public function setUp()
+    {
+        parent::setUp();
+        $setup = \Ornamental\Settings::getInstance();
+
+        $setup->defaults = array(
+            'website' => 'http://example.com',
+        );
+    }
+
     public function testRenderHtml()
     {
         $message = new \Ornamental\Message('user_hello');
@@ -30,6 +40,7 @@ Welcome to our service. We really thank you for signing up.<br><br>
 
 --<br>
 The Team
+<a href="http://example.com">Website</a>.
 
 </td>
 </tr>
@@ -67,6 +78,7 @@ Come check us out: http://cnn.com/
 
 --
 The Team
+http://example.com
 
 END;
 
