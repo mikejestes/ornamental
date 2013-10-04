@@ -3,6 +3,8 @@ Ornamental
 
 A library to send templated transactional emails. Plugins for your choice of template language and mail sending library. Configuration through YAML.
 
+[![Build Status](https://travis-ci.org/mikejestes/ornamental.png?branch=master)](https://travis-ci.org/mikejestes/ornamental)
+
 ## Installation
 
 Add to your `composer.json` file:
