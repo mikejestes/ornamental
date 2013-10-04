@@ -72,7 +72,7 @@ class Message
     {
         $templateData = $this->getTemplateData();
         $this->to = $this->replaceVar($this->to, $templateData);
-        $this->subject = $this->replaceVar($this->subject, $templateData);
+        $this->subject = $this->settings->subjectPrefix . $this->replaceVar($this->subject, $templateData);
     }
 
     private function replaceVar($str, $data)

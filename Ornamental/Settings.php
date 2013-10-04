@@ -10,6 +10,7 @@ class Settings
     public $senders = array();
     public $defaults = array();
     public $metaRenderer;
+    public $subjectPrefix = '';
 
     private static $instance;
 

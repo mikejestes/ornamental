@@ -25,6 +25,7 @@ $setup = \Ornamental\Settings::getInstance();
 $setup->templateDir = __DIR__ . '/templates/';
 $setup->layoutDir = __DIR__ . '/layouts/';
 $setup->messageDir = __DIR__ . '/messages/';
+$setup->subjectPrefix = '[test] ';
 
 $setup->sender = new \Ornamental\Sender\Phpmailer();
 $setup->sender->smtpHost = 'smtp.example.com';
