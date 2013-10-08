@@ -19,6 +19,6 @@ class Logger implements \Ornamental\Sender
             'body' => $message->renderHTML(),
             'text' => $message->renderText(),
         );
-        $this->logger->info("An email was sent.", $payload);
+        $this->logger->info("A {$message->name} email was sent.", $payload);
     }
 }
