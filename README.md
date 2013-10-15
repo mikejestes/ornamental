@@ -27,12 +27,25 @@ $setup = \Ornamental\Settings::getInstance();
 $setup->templateDir = __DIR__ . '/templates/';
 $setup->layoutDir = __DIR__ . '/layouts/';
 $setup->messageDir = __DIR__ . '/messages/';
+
+// optionally prefix emails with a string
 $setup->subjectPrefix = '[test] ';
 
-$setup->sender = new \Ornamental\Sender\Phpmailer();
-$setup->sender->smtpHost = 'smtp.example.com';
-$setup->sender->smtpUsername = 'root';
-$setup->sender->smtpPassword = 'password';
+// set default variables across all messages
+$setup->defaults = array(
+    'website_url' => 'http://example.com/',
+);
+
+// add phpmailer sender
+$phpmailer = new \Ornamental\Sender\Phpmailer();
+$phpmailer->smtpHost = 'smtp.example.com';
+$phpmailer->smtpUsername = 'root';
+$phpmailer->smtpPassword = 'password';
+
+$setup->addSender($phpmailer);
+
+//  \Ornamental\Sender\Logger is a sender that logs to a PSR logger class
+$setup->addSender(new \Ornamental\Sender\Logger($logger));
 ```
 
 ## Usage
