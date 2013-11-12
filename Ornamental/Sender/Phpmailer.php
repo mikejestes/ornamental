@@ -12,10 +12,10 @@ class Phpmailer implements \Ornamental\Sender
 
     public function send($message)
     {
-        $mail = new PHPMailer();
+        $mail = new \PHPMailer();
 
         if ($this->smtpHost) {
-            $mail->IsSMTP();
+            $mail->isSMTP();
             $mail->Host = $this->smtpHost;
             $mail->Port = $this->smtpPort;
             $mail->SMTPAuth = true;
@@ -27,7 +27,7 @@ class Phpmailer implements \Ornamental\Sender
         $mail->From = $message->from;
         $mail->AddAddress($message->to);
 
-        $mail->IsHTML(true);
+        $mail->isHTML(true);
         $mail->Subject = $message->subject;
         $mail->Body    = $message->renderHtml();
         $mail->AltBody = $message->renderText();
