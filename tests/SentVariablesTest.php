@@ -15,6 +15,7 @@ class SendVariablesTest extends OrnamentalTestSuite
 
         $this->assertEquals('to@example.com', $logEntry->to);
         $this->assertEquals('Welcome to Ornamental, Joe W.', $logEntry->subject);
+        $this->assertEquals('Service Corp.', $logEntry->fromName);
     }
 
     public function testSentNested()
@@ -29,5 +30,6 @@ class SendVariablesTest extends OrnamentalTestSuite
 
         $this->assertEquals('to@example.com', $logEntry->to);
         $this->assertEquals('Welcome to Ornamental, Joe W.', $logEntry->subject);
+        $this->assertEquals('', $logEntry->fromName);
     }
 }

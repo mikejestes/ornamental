@@ -25,11 +25,13 @@ class Phpmailer implements \Ornamental\Sender
         }
 
         $mail->From = $message->from;
+        $mail->FromName = $message->fromName;
         $mail->AddAddress($message->to);
 
         $mail->isHTML(true);
         $mail->Subject = $message->subject;
         $mail->Body    = $message->renderHtml();
         $mail->AltBody = $message->renderText();
+        $mail->send();
     }
 }

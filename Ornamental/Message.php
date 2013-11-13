@@ -9,6 +9,7 @@ class Message
     public $name;
     public $to;
     public $from;
+    public $fromName;
     public $subject;
     public $layout;
     public $template;
