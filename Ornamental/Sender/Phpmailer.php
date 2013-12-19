@@ -26,7 +26,9 @@ class Phpmailer implements \Ornamental\Sender
 
         $mail->From = $message->from;
         $mail->FromName = $message->fromName;
-        $mail->AddAddress($message->to);
+        foreach (explode(',', $message->to) as $email) {
+            $mail->AddAddress($email);
+        }
 
         $mail->isHTML(true);
         $mail->Subject = $message->subject;
