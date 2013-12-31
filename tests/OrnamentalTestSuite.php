@@ -10,6 +10,7 @@ class OrnamentalTestSuite extends \PHPUnit_Framework_TestCase
         $setup->templateDir = __DIR__ . '/templates/';
         $setup->layoutDir = __DIR__ . '/layouts/';
         $setup->messageDir = __DIR__ . '/messages/';
+        $setup->defaults = array();
 
         $deliveries = \Ornamental\Deliveries::getInstance();
         $deliveries->reset();

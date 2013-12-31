@@ -1,0 +1,5 @@
+from: service@example.com
+to: "{{ email }}"
+subject: "Welcome to Ornamental, {{username}}"
+layout: hello
+template: user_welcome
