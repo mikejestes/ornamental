@@ -1,0 +1,4 @@
+from: "{{ dynamic_from }}"
+to: email
+subject: "Welcome to Ornamental, username"
+template: minimal
