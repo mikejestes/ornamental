@@ -1,5 +1,5 @@
 from: service@example.com
-fromName: "Service Corp."
+fromName: "{{ company }}"
 to: "{{user.email}}"
 subject: "Welcome to Ornamental, {{user.name}}"
 layout: welcome

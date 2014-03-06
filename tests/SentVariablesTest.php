@@ -2,12 +2,13 @@
 
 namespace Ornamental\Tests;
 
-class SendVariablesTest extends OrnamentalTestSuite
+class SentVariablesTest extends OrnamentalTestSuite
 {
     public function testSentPlain()
     {
         $message = new \Ornamental\Message('user_welcome');
         $message->user = array('email' => 'to@example.com', 'name' => 'Joe W.');
+        $message->company = 'Service Corp.';
         $message->send();
 
         $deliveries = \Ornamental\Deliveries::getInstance();

@@ -21,7 +21,8 @@
 
     "require-dev": {
         "phpmailer/phpmailer": "@dev",
-        "mustache/mustache":   "@stable"
+        "mustache/mustache":   "@stable",
+        "phpunit/phpunit":     "@stable"
     },
 
     "autoload": {
