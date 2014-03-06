@@ -11,6 +11,7 @@ class Message
     public $from;
     public $fromName;
     public $subject;
+    private $originalSubject;
     public $layout;
     public $template;
     public $required = array();
@@ -75,7 +76,12 @@ class Message
         $this->to = $this->replaceVar($this->to, $templateData);
         $this->from = $this->replaceVar($this->from, $templateData);
         $this->fromName = $this->replaceVar($this->fromName, $templateData);
-        $this->subject = $this->settings->subjectPrefix . $this->replaceVar($this->subject, $templateData);
+
+        if (!$this->originalSubject) {
+            $this->originalSubject = $this->subject;
+        }
+
+        $this->subject = $this->settings->subjectPrefix . $this->replaceVar($this->originalSubject, $templateData);
     }
 
     private function replaceVar($str, $data)
