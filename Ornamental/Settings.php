@@ -7,6 +7,8 @@ class Settings
     public $templateDir;
     public $messageDir;
     public $layoutDir;
+    public $partialDir;
+
     public $senders = array();
     public $defaults = array();
     public $metaRenderer;

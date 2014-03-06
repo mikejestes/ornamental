@@ -15,7 +15,17 @@ class Mustache
 
     public function renderString($string, $templateData)
     {
-        $mustacheEngine = new \Mustache_Engine();
+        if ($this->settings->partialDir) {
+            $partialDir = $this->settings->partialDir;
+        } else {
+            $partialDir = $this->settings->templateDir . 'partials/';
+        }
+
+        $options = array(
+            'partials_loader' => new \Mustache_Loader_FilesystemLoader($partialDir),
+        );
+        $mustacheEngine = new \Mustache_Engine($options);
+
         return $mustacheEngine->render($string, $templateData);
     }
 
