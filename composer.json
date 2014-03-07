@@ -22,7 +22,7 @@
     "require-dev": {
         "phpmailer/phpmailer": "@dev",
         "mustache/mustache":   "@stable",
-        "phpunit/phpunit":     "@stable"
+        "phpunit/phpunit":     "3.7.*"
     },
 
     "autoload": {
