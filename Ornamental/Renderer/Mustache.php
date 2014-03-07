@@ -21,9 +21,11 @@ class Mustache
             $partialDir = $this->settings->templateDir . 'partials/';
         }
 
-        $options = array(
-            'partials_loader' => new \Mustache_Loader_FilesystemLoader($partialDir),
-        );
+        $options = array();
+        if (is_dir($partialDir)) {
+            $options['partials_loader'] = new \Mustache_Loader_FilesystemLoader($partialDir);
+        }
+
         $mustacheEngine = new \Mustache_Engine($options);
 
         return $mustacheEngine->render($string, $templateData);
