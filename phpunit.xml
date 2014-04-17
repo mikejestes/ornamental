@@ -1,8 +1,4 @@
-<phpunit backupGlobals="true"
-         backupStaticAttributes="false"
-         bootstrap="tests/bootstrap.php"
-         cacheTokens="false"
-         colors="true">
+<phpunit colors="true" bootstrap="tests/bootstrap.php">
     <testsuites>
         <testsuite name="Ornamental Test Suite">
             <directory suffix="Test.php">tests</directory>

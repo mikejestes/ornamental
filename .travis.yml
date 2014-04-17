@@ -1,8 +1,9 @@
 language: php
 php:
-  - 5.5
-  - 5.4
-  - 5.3
-script: phpunit --coverage-text tests/
+    - 5.5
+    - 5.4
+    - 5.3
+    - hhvm
+script: phpunit
 before_script:
-   - composer install
+    - composer install --no-dev

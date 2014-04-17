@@ -16,13 +16,13 @@
     "require": {
         "php":                 ">=5.3.0",
         "psr/log":             "~1.0",
-        "symfony/yaml":        "@stable"
+        "symfony/yaml":        "2.4.*"
     },
 
     "require-dev": {
         "phpmailer/phpmailer": "@dev",
-        "mustache/mustache":   "@stable",
-        "phpunit/phpunit":     "3.7.*"
+        "mustache/mustache":   "2.6.*",
+        "phpunit/phpunit":     "4.0.*"
     },
 
     "autoload": {
