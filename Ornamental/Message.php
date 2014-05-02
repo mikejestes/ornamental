@@ -11,13 +11,13 @@ class Message
     public $from;
     public $fromName;
     public $subject;
-    private $originalSubject;
     public $layout;
     public $template;
     public $required = array();
 
-    private $settings;
-    private $templateData = array();
+    protected $originalSubject;
+    protected $settings;
+    protected $templateData = array();
 
     public function __construct($name, $settings = null)
     {
@@ -70,7 +70,7 @@ class Message
         return $renderer->renderText($this);
     }
 
-    private function prepareMeta()
+    protected function prepareMeta()
     {
         $templateData = $this->getTemplateData();
         $this->to = $this->replaceVar($this->to, $templateData);
