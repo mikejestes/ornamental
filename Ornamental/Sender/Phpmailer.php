@@ -13,6 +13,7 @@ class Phpmailer implements \Ornamental\Sender
     public function send($message)
     {
         $mail = new \PHPMailer();
+        $mail->CharSet = 'UTF-8';
 
         if ($this->smtpHost) {
             $mail->isSMTP();
