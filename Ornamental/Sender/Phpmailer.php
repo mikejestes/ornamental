@@ -9,11 +9,14 @@ class Phpmailer implements \Ornamental\Sender
     public $smtpPassword;
     public $smtpSecure;
     public $smtpPort = 25;
+    public $charSet = 'UTF-8';
+    public $encoding = 'quoted-printable';
 
     public function send($message)
     {
         $mail = new \PHPMailer();
-        $mail->CharSet = 'UTF-8';
+        $mail->CharSet = $this->charSet;
+        $mail->Encoding = $this->encoding;
 
         if ($this->smtpHost) {
             $mail->isSMTP();
